@@ -116,6 +116,8 @@ section{
     height: 100vh;
     color: #ffffff;
     font-size: 1.5em;
+
+
 }
 p.section-title{
     display: inline-block;
@@ -129,31 +131,54 @@ p.section-title{
     border-radius: 20px;
     z-index: 10;
 }
+
 section.about{
     background: url("../img/_info.jpg")0 100% border-box no-repeat;
     background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 section.career{
     background: url("../img/_career.jpg")0 100% border-box no-repeat;
     background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 section.skills{
     background: url("../img/_skills.jpg")0 100% border-box no-repeat;
     background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 section.projects{
     background: url("../img/_projects.jpg")0 100% border-box no-repeat;
     background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 section.help{
     background: url("../img/_help.jpg")0 100% border-box no-repeat;
     background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 section.contacts{
     background: url("../img/_contacts.jpg")0 100% border-box no-repeat;
     background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+
+
 article>p.description-title{
     display: block;
     position: relative;
@@ -220,6 +245,7 @@ article>p.description-cap {
     margin: auto;
     position: relative;
     top:10vh;
+ // overflow: scroll;
 }
 .timeline-row{
     height: 50%;
@@ -259,12 +285,23 @@ p.text-in-col>a{
 }
 .col-top{
     position: absolute;
-    bottom: 5px;
+    bottom: 15px;
     right: 0;
+}
+.first-edu{
+  position: absolute;
+  top: 10%;
+  width: 30%;
+}
+.secnd-edu{
+  position: absolute;
+  top: 25%;
+  width: 10%;
+  left: 14%;
 }
 .col-bot{
     position: absolute;
-    top: 5px;
+    top: 15px;
     right: 0;
 }
 .timeline-row-middle{
@@ -288,6 +325,29 @@ p.text-in-col>a{
     transform: translateY(-10px);
     margin-left: auto;
     z-index: 9999;
+  span{
+    position: relative;
+    top: 100%;
+    left:-100%;
+  }
+}
+.point-min{
+  position: relative;
+  width: 14px;
+  height: 14px;
+  font-size: 0.6em;
+  transform: translateY(-12px);
+  left: 25%;
+
+}
+.point-min-2{
+  position: relative;
+  width: 14px;
+  height: 14px;
+  font-size: 0.6em;
+  transform: translateY(-12px);
+  left: 55%;
+
 }
 .timeline-point:hover{
     /*border: 3px solid #ffffff;*/
@@ -304,17 +364,21 @@ p.text-in-col>a{
 }
 .skills-group{
     display: inline-block;
-    width: 24%;
-    border-left: 1px dotted #fff;
+    width: 22%;
+    margin: 10px 1.3vw ;
+    border: 1px solid #fff;
     vertical-align: top;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,.25);
 }
-.skills-group:first-child{
-    border-left: none;
-}
+//.skills-group:first-child{
+//    border-left: none;
+//}
 .skills-group p{
     text-align: center;
     border-bottom: 1px solid #fff;
-    margin: 5% auto;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 .skill-icon{
     height: 6vh;
@@ -322,11 +386,27 @@ p.text-in-col>a{
     border: 1px dotted #fff;
     border-radius: 50%;
 }
+svg{
+    height: 60px;
+    width: 80px;
+}
+svg.progress{
+    height: 6vh;
+    width: 6vh;
+    border: 1px dotted #fff;
+}
+svg > path{
+    fill: #fff;
+    fill-opacity: 0.7;
+
+}
 article.skill{
     margin: 10px;
     padding: 5px;
-    border: 1px dotted #fff;
+    border: 1px solid rgba(255,255,255,0.5);
     border-radius: 100px 15px 15px 100px;
+    box-shadow: 0 1px 1px rgba(255,255,255,1);
+
 }
 article.skill div{
     display: inline-block;
