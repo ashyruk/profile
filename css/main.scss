@@ -1,4 +1,46 @@
 $color-bg-full:rgba(43,69,63,1);
+$color-bg-03:rgba(43,69,63,0.3);
+$color-bg-06:rgba(43,69,63,0.6);
+@mixin transition($params...){
+    -webkit-transition: $params;
+       -moz-transition: $params;
+            transition: $params;
+}
+@mixin transition-ease($sec){
+    -webkit-transition: all $sec ease;
+       -moz-transition: all $sec ease;
+            transition: all $sec ease;
+}
+@mixin transition-linear($sec) {
+    -webkit-transition: all $sec linear;
+       -moz-transition: all $sec linear;
+            transition: all $sec linear;
+}
+@mixin border($border...){
+    border: $border;
+}
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+
+}
+@mixin box_shadow($shadow...){
+    -webkit-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+@mixin block-hover{
+    background-color: $color-bg-06;
+    @include box_shadow(0 1px 30px);
+    @include transition-linear(1s);
+}
+@mixin block{
+    background-color: $color-bg-03;
+    @include border(1px solid rgba(255, 255, 255, 1));
+    @include border-radius(15px);
+    @include box_shadow(0 1px 15px);
+}
 
 *{
     margin: 0;
@@ -13,50 +55,36 @@ html,body {
     font-family: "Open Sans", Courier, New, Roboto, Arial, Helvetica, sans-serif;
     font-weight: 300;
     color: #ffffff;
-    margin: 0;
+    background: radial-gradient(rgba(43,69,63,0.1),$color-bg-06);
 }
 a{
     text-decoration: none;
     color: white;
 }
 .container{
-    background: radial-gradient(rgba(43,69,63,0.1),$color-bg-full);
+
 }
 header{
-    position: absolute;
-    top: 1%;
+    @include block;
+    position: relative;
     width: 90vw;
-    /*left: 4vw;*/
-    margin: auto 4.5vw;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 1);
-    box-shadow:0 1px 20px;
-    background-color: rgba(43,69,63,0.3);
+    margin: 20px 4.5vw;
     padding: 10px;
 }
 header:hover{
-    background-color: rgba(43,69,63,0.6);
-    box-shadow:0 1px 30px;
-    transition: all 1s linear ;
+    @include block-hover;
 }
 .fixed{
+    @include transition(all 1 s linear);
     position: fixed;
-    top: 0;
     z-index: 9999;
-    transition: all 1s linear;
 }
 .block{
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 15px;
-    box-shadow:0 1px 20px;
-    background-color: rgba(43,69,63,0.3);
+    @include block;
 }
 .block:hover{
-    background-color: rgba(43,69,63,0.6);
-    box-shadow:0 1px 30px;
-    transition: all 1s linear ;
+   @include block-hover;
 }
-
 .block-dark{
     border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 15px;
@@ -76,8 +104,7 @@ header:hover{
     width: 60px;
     height: 60px;
     border: 3px solid rgba(255,255,255,1);
-    /*box-shadow: 0 0 3px rgba(255,255,255,1);*/
-    border-radius: 50%;
+    @include border-radius(50%);
     vertical-align: middle;
 }
 .logo-name{
@@ -113,7 +140,7 @@ nav>a:hover{
     margin: 0;
 }
 section{
-    height: 100vh;
+    //height: 100vh;
     color: #ffffff;
     font-size: 1.5em;
 
@@ -132,50 +159,50 @@ p.section-title{
     z-index: 10;
 }
 
-section.about{
-    background: url("../img/_info.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
-section.career{
-    background: url("../img/_career.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-section.skills{
-    background: url("../img/_skills.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-section.projects{
-    background: url("../img/_projects.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-section.help{
-    background: url("../img/_help.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-section.contacts{
-    background: url("../img/_contacts.jpg")0 100% border-box no-repeat;
-    background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+//section.about{
+//    background: url("../img/_info.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//
+//    background-attachment: fixed;
+//    background-position: center;
+//    background-repeat: no-repeat;
+//
+//}
+//section.career{
+//    background: url("../img/_career.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//  background-attachment: fixed;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//}
+//section.skills{
+//    background: url("../img/_skills.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//  background-attachment: fixed;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//}
+//section.projects{
+//    background: url("../img/_projects.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//  background-attachment: fixed;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//}
+//section.help{
+//    background: url("../img/_help.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//  background-attachment: fixed;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//}
+//section.contacts{
+//    background: url("../img/_contacts.jpg")0 100% border-box no-repeat;
+//    background-size: cover;
+//  background-attachment: fixed;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//}
 
 
 
@@ -192,7 +219,7 @@ article.description{
     margin: auto;
     padding: 3%;
     text-align: center;
-    top: 20%;
+    top: 30%;
     border: 1px solid rgba(255,255,255,0.7);
     border-radius: 15px;
     background-color: rgba(43,69,63,0.3);
@@ -214,8 +241,7 @@ article>p.description-cap {
 .social{
     position: relative;
     width: 30%;
-    margin: auto;
-    top: 25%;
+    margin:20px auto;
     text-align: center;
 }
 .social-icon{
@@ -279,8 +305,11 @@ p.text-in-col{
     border-radius: 15px;
     padding: 15px;
     background-color: rgba(255,255,255,0.3);
+    overflow: hidden;
+    font-size: 0.7em;
+    word-wrap: break-word;
 }
-p.text-in-col>a{
+p.text-in-col a{
     text-decoration: underline;
 }
 .col-top{
@@ -293,11 +322,23 @@ p.text-in-col>a{
   top: 10%;
   width: 30%;
 }
+.first-work{
+    position: absolute;
+    bottom: 38%;
+    left: 32%;
+    width: 50%;
+}
 .secnd-edu{
   position: absolute;
-  top: 25%;
+  top: 23%;
   width: 10%;
   left: 14%;
+}
+.third-edu{
+    position: absolute;
+    top: 34%;
+    width: 10%;
+    left: 54%;
 }
 .col-bot{
     position: absolute;

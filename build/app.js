@@ -1,0 +1,1 @@
+function getOfsetsOfAnchors(){var e=document.querySelectorAll(".separator"),r=[];return r.push(0),Array.prototype.forEach.call(e,function(e){r.push(e.offsetTop)}),r}var ScrollY=0;window.addEventListener("scroll",function(e){var r=document.getElementsByTagName("header")[0];this.scrollY>0?r.className="fixed":r.className=""});
