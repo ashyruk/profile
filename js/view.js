@@ -18,8 +18,8 @@ window.addEventListener('scroll', function(e){
     //e.preventDefault();
     var elem = document.getElementsByTagName('header')[0];
     //console.log(this.pageYOffset);
-    if (this.scrollY>0){
-        elem.className = 'fixed';
+    if (this.scrollY>600){
+        elem.className = 'show';
     }else{
         elem.className = '';
     }
