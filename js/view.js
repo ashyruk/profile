@@ -1,37 +1,39 @@
 /**
  * Created by rybak on 18.01.2017.
  */
-var ScrollY = 0;
-function getOfsetsOfAnchors() {
-    var elems = document.querySelectorAll('.separator');
-    var coord = [];
-
-    coord.push(0);
-    Array.prototype.forEach.call(elems,function (i) {
-        coord.push(i.offsetTop);
-    });
-    return coord;
-}
-window.addEventListener('scroll', function(e){
-    //console.log(this.scrollY);
-
-    //e.preventDefault();
-    var elem = document.getElementsByTagName('header')[0];
-    //console.log(this.pageYOffset);
-    if (this.scrollY>600){
-        elem.className = 'show';
-    }else{
-        elem.className = '';
+var app;
+app = {
+    ScrollY: 0,
+    anchorsCoord: [],
+    getOffsetsOfAnchors: function () {
+        var elems = document.querySelectorAll('.separator');
+        var coords = this.anchorsCoord;
+        coords.push(0);
+        Array.prototype.forEach.call(elems, function (i) {
+            coords.push(i.offsetTop);
+        });
+        return coords;
+    },
+    addListeners: function () {
+        window.addEventListener('scroll', function () {
+            var elem = document.getElementsByTagName('header')[0];
+            if (this.scrollY > 600) {
+                elem.className = 'show';
+            } else {
+                elem.className = '';
+            }
+        });
+    },
+    setCopyright: function () {
+        var date = new Date().getFullYear();
+        var el = document.querySelector('.copy');
+        el.innerText = "© 2017–" + date + " Valery Rybak";
+    },
+    init: function () {
+        this.addListeners();
+        this.setCopyright();
+        this.getOffsetsOfAnchors();
+       // console.log(this.anchorsCoord);
     }
-    //this.blur();
-
-
-    //var top = window.pageYOffset;
-    // var top = this.scrollY;
-    // if (ScrollY > top){
-    //         window.scrollBy(0,-10);
-    // } else if (ScrollY < top){
-    //     window.scrollBy(0,10);
-    // }
-    // ScrollY = top;
-});
+};
+app.init();
