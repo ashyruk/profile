@@ -11,7 +11,7 @@
  .pipe(plugins.gulpMinifyCss('main.js'))
  });
 */
-//TODO:gulp-rev, gulp-imagemin, gulp-unCSS, build, clean, csslint, restart
+//TODO:gulp-rev, gulp-unCSS, build, clean, csslint, restart
 var gulp = require('gulp');
 var minifyCss = require('gulp-minify-css');
 const autoprefixer = require('gulp-autoprefixer');
@@ -27,7 +27,7 @@ var paths = {
     html:['./index.html'],
     css:['./css/*.scss'],
     js:['./js/*.js'],
-    img:['./img/*']
+    img:['./img/*','./img/svg/*','./img/skills/*']
 };
 
 gulp.task('mincss', function(){
@@ -63,6 +63,7 @@ gulp.task('watcher',function(){
     gulp.watch(paths.css, ['mincss']);
     gulp.watch(paths.html, ['html']);
     gulp.watch(paths.js, ['js']);
+    gulp.watch(paths.img,['img']);
 });
 gulp.task('default', ['watcher', 'browserSync']);
 
