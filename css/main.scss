@@ -182,7 +182,7 @@ section{
 }
 //---------------ABOUT----------------------------------
 section.about{
-    background: url("../build/info.jpg") no-repeat fixed center;
+    background: url("/img/info.jpg") no-repeat fixed center;
     background-size: cover;
     padding-top: 4%;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
@@ -241,7 +241,7 @@ section.about{
 //---------------end-ABOUT----------------------------------
 //------------------CAREER--------------------------
 section.career{
-    background: url("../img/_career.jpg") no-repeat fixed center;
+    background: url("/img/career.jpg") no-repeat fixed center;
     background-size: cover;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
     .timeline{
@@ -343,7 +343,7 @@ section.career{
 //----------------SKILLS--------------------------------------
 section.skills{
     background-size: cover;
-    background: url("../build/img/_skills.jpg") no-repeat fixed center;
+    background: url("/img/skills.jpg") no-repeat fixed center;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
     .skills-block{
         width: 90vw;
@@ -407,14 +407,14 @@ section.skills{
 
 //-------------end---SKILLS-----------------------------------
 //section.projects{
-//    background: url("../img/_projects.jpg")0 100% border-box no-repeat;
+//    background: url("../img/projects.jpg")0 100% border-box no-repeat;
 //    background-size: cover;
 //  background-attachment: show;
 //  background-position: center;
 //  background-repeat: no-repeat;
 //}
 //section.help{
-//    background: url("../img/_help.jpg")0 100% border-box no-repeat;
+//    background: url("../img/help.jpg")0 100% border-box no-repeat;
 //    background-size: cover;
 //  background-attachment: show;
 //  background-position: center;
@@ -423,7 +423,7 @@ section.skills{
 
 //--------------CONTACTS----------------------------------------
 section.contacts{
-    //background: url("../img/_contacts.jpg") no-repeat fixed center;
+    //background: url("../img/contacts.jpg") no-repeat fixed center;
     background-size: cover;
     background: $color-base600-06;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
