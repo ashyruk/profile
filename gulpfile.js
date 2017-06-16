@@ -27,7 +27,7 @@ var paths = {
     html:['./index.html'],
     css:['./css/*.scss'],
     js:['./js/*.js'],
-    img:['./img/*','./img/svg/*','./img/skills/*']
+    img:['./img/*.*','./img/svg/*','./img/skills/*']
 };
 
 gulp.task('mincss', function(){
