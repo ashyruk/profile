@@ -57,7 +57,7 @@ gulp.task('js', function(){
         .pipe(reload({stream:true}));
 });
 gulp.task('img',function () {
-    gulp.src(paths.img).pipe(imagemin()).pipe(gulp.dest('build'));
+    gulp.src(paths.img).pipe(imagemin()).pipe(gulp.dest('build/img'));
 });
 gulp.task('watcher',function(){
     gulp.watch(paths.css, ['mincss']);
