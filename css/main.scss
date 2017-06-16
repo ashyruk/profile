@@ -182,7 +182,7 @@ section{
 }
 //---------------ABOUT----------------------------------
 section.about{
-    background: url("/img/_info.jpg") no-repeat fixed center;
+    background: url("../build/_info.jpg") no-repeat fixed center;
     background-size: cover;
     padding-top: 4%;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
