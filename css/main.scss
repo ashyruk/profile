@@ -124,6 +124,11 @@ header{
             border: 3px solid rgba(255,255,255,1);
             @include border-radius(50%);
             vertical-align: middle;
+            @media screen and (max-width: 320px) {
+                width: 50px;
+                height: 50px;
+                border: 2px solid rgba(255,255,255,1);
+            }
         }
         .logo-name{
             display: inline-block;
@@ -157,6 +162,12 @@ header{
                 width: 7%;
                 padding: 10px;
             }
+            @media screen and (max-width: 320px) {
+                height: 25px;
+                width: 6%;
+                padding: 5px;
+                font-size: 0.7em;
+            }
             &:hover{
                 border: $border-white;
                 @include box-shadow(0 1px 20px rgba(255,255,255,1));
@@ -170,6 +181,9 @@ header{
 section{
     color: #ffffff;
     font-size: 1.5em;
+    @media screen and (max-width: 500px){
+        font-size: 1.3em;
+    }
     p.section-title{
         border-bottom: 1px dashed #ffffff;
         width: 90%;
@@ -182,10 +196,11 @@ section{
 }
 //---------------ABOUT----------------------------------
 section.about{
-    height: 100vh;
+    //height: 100vh;
     background: url("./img/info.jpg") no-repeat fixed center;
     background-size: cover;
     padding-top: 4%;
+    padding-bottom: 4%;
     @include box-shadow(0 0 0 50vw rgba(0,0,0,0.4) inset);
 
     article.description{
@@ -200,11 +215,18 @@ section.about{
             @media screen and ( max-width: 700px) {
                 font-size: 0.8em;
             }
+            @media screen and ( max-width: 320px) {
+                display: none;
+            }
+
         }
         p.description-cap {
             font-size: 2em;
             @media screen and (max-width: 700px){
                 font-size: 1.3em;
+            }
+            @media screen and (max-width: 320px){
+                font-size: 1.1em;
             }
         }
         &:hover{
@@ -213,6 +235,9 @@ section.about{
         p.description-text{
             @media screen and (max-width: 700px){
                 font-size: 0.8em;
+            }
+            @media screen and (max-width: 320px){
+                font-size: 0.7em;
             }
         }
         img.description-img{
@@ -369,6 +394,9 @@ section.skills{
                 background-color: #eaeaea;
                 @include linear-gradient(to right, rgba(255,255,255,.3),$color-bg-full 60%);
                 border: 2px solid #fff;
+                @media screen and (max-width: 500px){
+                    display: block;
+                }
                 p{
                     display: inline-block;
                     text-transform: uppercase;
@@ -439,6 +467,9 @@ section.contacts{
             @media screen and (max-width: 700px){
                 font-size: 1em;
             }
+            @media screen and (max-width: 320px){
+                font-size: 0.8em;
+            }
         }
         a.mail-me{
             padding:10px;
@@ -451,6 +482,10 @@ section.contacts{
             @media screen and (max-width: 700px){
                 font-size: 0.7em;
                 padding: 5px;
+            }
+            @media screen and (max-width: 320px){
+                font-size: 0.7em;
+                padding: 3px;
             }
         }
     }
