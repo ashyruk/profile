@@ -421,19 +421,19 @@ section.skills{
                         height: 100%;
                         @include border-radius(50%);
                     }
-                    svg{
-                        height: 60px;
-                        width: 80px;
-                    }
-                    svg.progress{
-                        height: 6vh;
-                        width: 6vh;
-                        border: 1px dotted #fff;
-                    }
-                    svg > path{
-                        fill: #fff;
-                        fill-opacity: 0.7;
-                    }
+                    //svg{
+                    //    height: 60px;
+                    //    width: 80px;
+                    //}
+                    //svg.progress{
+                    //    height: 6vh;
+                    //    width: 6vh;
+                    //    border: 1px dotted #fff;
+                    //}
+                    //svg > path{
+                    //    fill: #fff;
+                    //    fill-opacity: 0.7;
+                    //}
                 }
             }
         }
