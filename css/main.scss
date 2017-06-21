@@ -167,11 +167,11 @@ header{
             }
             @media screen and (max-width: 470px) {
                 width: 6%;
-                padding: 6px;
+                padding:10px 6px;
                 font-size: 0.75em;
             }
             @media screen and (max-width: 370px) {
-                padding: 5px;
+                padding:10px 5px;
                 font-size: 0.7em;
             }
             &:hover{
