@@ -1,10 +1,46 @@
 /**
  * Created by rybak on 18.01.2017.
  */
+function WriteTextTimeout(text,selector){
+    var elem = document.querySelector(selector);
+    var i=0;
+    var timer = setTimeout(function print(){
+        if (i<text.length){
+            elem.textContent+=text[i];
+            i++;
+        }else {
+            clearTimeout(timer);
+            setTimeout(function(){elem.nextSibling.hidden=true;},2000);
+        }
+        setTimeout(print.bind(text),100);
+    },1000);
+}
+function WriteTextInterval(text,selector){
+    var elem = document.querySelector(selector);
+    elem.textContent=" ";
+    var i=0;
+    var timer = setInterval(function (){
+        if (i<text.length){
+            elem.textContent+=text[i];
+            i++;
+        }else {
+            clearInterval(timer);
+            setTimeout(function(){elem.nextSibling.hidden=true;},2000);
+        }
+    }.bind(text),100);
+}
+
+
 var app;
 app = {
     ScrollY: 0,
     anchorsCoord: [],
+    about:{
+        cap:{selector:'.description-cap span.text', text:"Valery Rybak"},
+        desc:{selector:'.description-text span.text', text:"Junior FrontEnd Developer from Minsk, Belarus. " +
+        "Website maker. Idea thinker. Water Beer drinker."}
+
+    },
     getOffsetsOfAnchors: function () {
         var elems = document.querySelectorAll('.separator');
         var coords = this.anchorsCoord;
@@ -23,6 +59,12 @@ app = {
                 elem.className = '';
             }
         });
+        //document.addEventListener('load',WriteTextTimeout(this.about.cap.text,this.about.cap.selector).bind(this.about));
+        document.addEventListener('load',this.writingAbout(this.about) );
+    },
+    writingAbout:function (about) {
+
+        WriteTextInterval(about.cap.text,about.cap.selector);
     },
     setCopyright: function () {
         var date = new Date().getFullYear();
