@@ -63,8 +63,10 @@ app = {
         document.addEventListener('load',this.writingAbout(this.about) );
     },
     writingAbout:function (about) {
+        var elem = document.querySelector(about.cap.selector);
+        elem.textContent=" ";
+        setTimeout(function(){WriteTextInterval(about.cap.text,about.cap.selector)},2000);
 
-        WriteTextInterval(about.cap.text,about.cap.selector);
     },
     setCopyright: function () {
         var date = new Date().getFullYear();
