@@ -1,8 +1,10 @@
 /**
  * Created by rybak on 18.01.2017.
  */
-function WriteTextTimeout(text,selector){
+function WriteTextTimeout(text,selector, callback){
     var elem = document.querySelector(selector);
+    elem.nextSibling.hidden=false;
+    elem.textContent=" ";
     var i=0;
     var timer = setTimeout(function print(){
         if (i<text.length){
@@ -10,13 +12,24 @@ function WriteTextTimeout(text,selector){
             i++;
         }else {
             clearTimeout(timer);
-            setTimeout(function(){elem.nextSibling.hidden=true;},2000);
+            setTimeout(function(){
+                elem.nextSibling.hidden=true;
+                if (callback && typeof callback == 'function'){
+                    callback();
+                }
+            },2000);
         }
-        setTimeout(print.bind(text),100);
+        if (text[i - 1] === '.') {
+            setTimeout(print.bind(text), 500);
+        } else {
+            setTimeout(print.bind(text), 100);
+        }
+        //setTimeout(print.bind(text),100);
     },1000);
 }
-function WriteTextInterval(text,selector){
+function WriteTextInterval(text,selector,callback){
     var elem = document.querySelector(selector);
+    elem.nextSibling.hidden=false;
     elem.textContent=" ";
     var i=0;
     var timer = setInterval(function (){
@@ -25,7 +38,12 @@ function WriteTextInterval(text,selector){
             i++;
         }else {
             clearInterval(timer);
-            setTimeout(function(){elem.nextSibling.hidden=true;},2000);
+            setTimeout(function(){
+                elem.nextSibling.hidden=true;
+                if (callback && typeof callback == 'function'){
+                    callback();
+                }
+            },2000);
         }
     }.bind(text),100);
 }
@@ -38,7 +56,7 @@ app = {
     about:{
         cap:{selector:'.description-cap span.text', text:"Valery Rybak"},
         desc:{selector:'.description-text span.text', text:"Junior FrontEnd Developer from Minsk, Belarus. " +
-        "Website maker. Idea thinker. Water Beer drinker."}
+        "Website maker. Idea thinker. Beer drinker."}
 
     },
     getOffsetsOfAnchors: function () {
@@ -65,7 +83,17 @@ app = {
     writingAbout:function (about) {
         var elem = document.querySelector(about.cap.selector);
         elem.textContent=" ";
-        setTimeout(function(){WriteTextInterval(about.cap.text,about.cap.selector)},2000);
+        elem = document.querySelector(about.desc.selector);
+        elem.textContent=" ";
+        setTimeout(function(){
+            WriteTextInterval(about.cap.text,about.cap.selector,function () {
+                WriteTextTimeout(about.desc.text, about.desc.selector, function () {
+                    //var elem = document.querySelector(about.desc.selector);
+                    //var idx = elem.innerHTML.indexOf("Water");
+                    //console.log(elem.innerHTML);
+                    //elem.innerHTML.replace("Water","<span class='cursor'>_</span>Water");
+                });
+            });},2000);
 
     },
     setCopyright: function () {
