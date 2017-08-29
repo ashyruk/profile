@@ -55,7 +55,7 @@ app = {
     anchorsCoord: [],
     about:{
         cap:{selector:'.description-cap span.text', text:"Valery Rybak"},
-        desc:{selector:'.description-text span.text', text:"Junior FrontEnd Developer from Minsk, Belarus. " +
+        desc:{selector:'.description-text span.text', text:"FrontEnd Developer from Minsk, Belarus. " +
         "Website maker. Idea thinker. Beer drinker."}
 
     },

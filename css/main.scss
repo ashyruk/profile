@@ -460,13 +460,6 @@ section.skills{
 }
 
 //-------------end---SKILLS-----------------------------------
-//section.projects{
-//    background: url("../img/projects.jpg")0 100% border-box no-repeat;
-//    background-size: cover;
-//  background-attachment: show;
-//  background-position: center;
-//  background-repeat: no-repeat;
-//}
 //section.help{
 //    background: url("../img/help.jpg")0 100% border-box no-repeat;
 //    background-size: cover;
@@ -560,25 +553,46 @@ section.contacts{
 //--------------------end--Service-----------------------------
 
 //--------projects-----------
-.projects-block{
-    position: relative;
-    width: 90vw;
-    margin: auto;
-    top:15vh;
+
+section.projects{
+
+    background: url("img/projects.jpg") no-repeat fixed center;
+    background-size: cover;
+    .projects-block{
+        position: relative;
+        width: 90vw;
+        margin: auto;
+        //top:15vh;
+    }
+
+    figure{
+        display: inline-block;
+        width: 25vh;
+        /*height: 20vw;*/
+        padding: 10px;
+        margin: 20px 2.5%;
+        font-size: 0.7em;
+        @include border-radius(0);
+        figcaption{
+            padding: 2px;
+            font-size: 1.3em;
+        }
+        p.view{
+            text-decoration: underline;
+            text-align: right;
+        }
+    }
+    figure>a>img{
+        position: relative;
+        border: 1px solid white;
+        /*display: flex;*/
+        width: 109%;
+        margin-left: -10px;
+
+    }
+
 }
-figure{
-    display: inline-block;
-    width: 25vh;
-    /*height: 20vw;*/
-    padding: 10px;
-    margin: 20px 2.5%;
-    font-size: 0.7em;
-}
-figure>a>img{
-    position: relative;
-    /*display: flex;*/
-    width: 100%;
-}
+
 
 
 footer{
