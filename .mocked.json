@@ -1,5 +1,5 @@
 {
-  "History": {
+  "hist": {
     "title": "string",
     "imageSrc": "string",
     "published": "boolean",
