@@ -1,0 +1,8 @@
+{
+  "History": {
+    "title": "string",
+    "imageSrc": "string",
+    "published": "boolean",
+    "createdAt": "date"
+  }
+}
